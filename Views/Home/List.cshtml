@@ -1,0 +1,15 @@
+@model Models.ImageListViewModel
+@{
+    ViewData["Title"] = "List of Images";
+}
+
+<h1>You have @Model.ImageCount images.</h1>
+@if (Model.ImageCount > 0)
+{
+    foreach (var img in Model.Images)
+    {
+        <h3>@img.ImageTitle</h3>
+        <img src="@img.ImageData" width="250" height="250" />
+    }
+}
+
