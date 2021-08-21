@@ -28,7 +28,7 @@ namespace UploadImage
             services.AddControllersWithViews();
 
             services.AddDbContext<AppDbContext>(o =>{
-               o.UseSqlServer("Data Source=.;Initial Catalog=WOTW;Integrated Security=true;");
+               o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
         }
 
